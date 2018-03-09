@@ -2,7 +2,7 @@
     <wb-module deploy-name="rabbitmq">
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <wb-resource deploy-path="/" source-path="/src/main/webapps" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <property name="context-root" value="rabbitmq"/>
         <property name="java-output-path" value="/rabbitmq/target/classes"/>
     </wb-module>

@@ -30,13 +30,12 @@ public class SerializeUtil {
      * @param bytes  
      * @return  
      */  
-    @SuppressWarnings("unchecked")
-	public static <T> T toObject(byte[] bytes) {      
-        T t = null;      
+    public static Object toObject (byte[] bytes) {      
+        Object obj = null;      
         try {        
             ByteArrayInputStream bis = new ByteArrayInputStream (bytes);        
             ObjectInputStream ois = new ObjectInputStream (bis);        
-            t = (T) ois.readObject();      
+            obj = ois.readObject();      
             ois.close();   
             bis.close();   
         } catch (IOException ex) {        
@@ -44,7 +43,7 @@ public class SerializeUtil {
         } catch (ClassNotFoundException ex) {        
             ex.printStackTrace();   
         }      
-        return t;    
+        return obj;    
     }   
        
 	
