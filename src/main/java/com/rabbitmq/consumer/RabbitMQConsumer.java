@@ -19,28 +19,29 @@ public class RabbitMQConsumer implements MessageListener{
 	
 	private void getBoys(Message message) {
 		byte[] body = message.getBody();
-		HashMap<String,List<Product>> object =SerializeUtil.toObject(body);
+		HashMap<String,List<Product>> object = (HashMap<String,List<Product>>) SerializeUtil.toObject(body);
 		System.out.println(object );
 
 	}
 	@SuppressWarnings("unused")
 	private void getLove(Message message) {
 		byte[] body = message.getBody();
-		HashMap<String,List<Product>> object =SerializeUtil.toObject(body);
+		HashMap<String,List<Product>> object = (HashMap<String,List<Product>>) SerializeUtil.toObject(body);
 		System.out.println(object );
 
 	}
 	@SuppressWarnings("unused")
 	private void getGirls(Message message) {
 		byte[] body = message.getBody();
-		HashMap<String,List<Product>> object =SerializeUtil.toObject(body);
+		HashMap<String,List<Product>> object = (HashMap<String,List<Product>>) SerializeUtil.toObject(body);
 		System.out.println(object );
 	}
 	
 	@Override
 	public void onMessage(Message message) {
 		byte[] body = message.getBody();
-		HashMap<String,List<Product>> object = SerializeUtil.toObject(body);
+		@SuppressWarnings("unchecked")
+		HashMap<String,List<Product>> object = (HashMap<String,List<Product>>) SerializeUtil.toObject(body);
 		System.out.println(object );
 	}
 }
