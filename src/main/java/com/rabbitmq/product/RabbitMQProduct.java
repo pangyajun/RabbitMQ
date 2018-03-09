@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
 
-import org.apache.http.HttpResponse;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.stereotype.Service;
 
@@ -29,8 +27,8 @@ public class RabbitMQProduct {
 			list.add(product);
 			list.add(product2);
 			map.put("productList", list);
-			amqpTemplate.convertAndSend( "boys.love.girls", map);	
-			return "success";
+			amqpTemplate.convertAndSend( "boys.love.girls", list);	
+			return "消息成功发送";
 		} catch (Exception e) {
 			return "参数或mq服务器有误";
 		}

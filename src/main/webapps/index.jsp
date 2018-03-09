@@ -8,7 +8,7 @@
 </head>
 <body>
 	hi
-<form action="mq">
+<form action="mq.html">
 <input type="submit" value="------提交------">
 </form>
 </body>
