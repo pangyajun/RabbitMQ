@@ -6,6 +6,7 @@
         <param-value>
             classpath:/spring-rabbitmq.xml
             classpath:/spring-service.xml
+            classpath:/spring-rabbitmq-consumer.xml
         </param-value>
     </context-param>
     <listener>

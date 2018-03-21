@@ -1,6 +1,7 @@
 package com.oaec.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Product implements Serializable{
 	
@@ -11,6 +12,7 @@ public class Product implements Serializable{
 	private String id;
 	private String name;
 	private Double price;
+	private List<Spec> listSpec;
 	public String getId() {
 		return id;
 	}
@@ -33,18 +35,25 @@ public class Product implements Serializable{
 	public Product() {
 		super();
 	}
-	public Product(String id, String name, Double price) {
+	public List<Spec> getListSpec() {
+		return listSpec;
+	}
+	public void setListSpec(List<Spec> listSpec) {
+		this.listSpec = listSpec;
+	}
+	public Product(String id, String name, Double price, List<Spec> listSpec) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
+		this.listSpec = listSpec;
 	}
+
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", price=" + price + "]";
+		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", listSpec=" + listSpec + "]";
 	}
 	
-
 	
 	
 	

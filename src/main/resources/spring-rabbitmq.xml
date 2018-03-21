@@ -26,17 +26,9 @@
 			<!-- routing key为“*.love.*”形式的 消息发送到love列队-->
 			<rabbit:binding queue="love" pattern="*.love.*"></rabbit:binding>
 		</rabbit:bindings>
-	</rabbit:topic-exchange>
-	
-	
+	</rabbit:topic-exchange>	
 	<!-- 定义操作模板，还可用 message-converter属性指定消息转换器，此处不配置，spring会给我们使用默认的转换器把消息转换成message对象 -->
 	<rabbit:template id="amqpTemplate" connection-factory="connectionFactory" exchange="topicExchange"  />
 	
-	 <rabbit:listener-container connection-factory="connectionFactory">
-		<!-- 消费者1从boys列队拿消息 -->
-		<rabbit:listener queues="boys"  ref="rabbitMQConsumer" method="getBoys" />
-		<rabbit:listener queues="love"  ref="rabbitMQConsumer" method="getLove" />
-		<rabbit:listener queues="girls" ref="rabbitMQConsumer" method="getGirls" /> 
-	</rabbit:listener-container> 
 <rabbit:annotation-driven />
 </beans>
